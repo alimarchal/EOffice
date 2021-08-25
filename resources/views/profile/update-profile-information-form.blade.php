@@ -38,6 +38,7 @@
                     </span>
                 </div>
 
+
                 <x-jet-secondary-button class="mt-2 mr-2" type="button" x-on:click.prevent="$refs.photo.click()">
                     {{ __('Select A New Photo') }}
                 </x-jet-secondary-button>
@@ -52,6 +53,14 @@
             </div>
         @endif
 
+
+        <!-- Username -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="username" value="{{ __('Username') }}" />
+            <x-jet-input id="username" type="text" class="mt-1 block w-full" wire:model.defer="state.username" autocomplete="username" />
+            <x-jet-input-error for="username" class="mt-2" />
+        </div>
+
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="name" value="{{ __('Name') }}" />
@@ -65,6 +74,10 @@
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
         </div>
+
+
+
+
     </x-slot>
 
     <x-slot name="actions">
